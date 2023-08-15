@@ -45,4 +45,16 @@ extension UIView {
         return self
     }
     
+    @discardableResult
+    func isUserInteractionEnabled(_ isEnabled: Bool) -> Self {
+        self.isUserInteractionEnabled = isEnabled
+        return self
+    }
+    
+    @discardableResult
+    func clipsToBounds(_ clipsToBounds: Bool) -> Self {
+        self.clipsToBounds = clipsToBounds
+        return self
+    }
+    
 }
