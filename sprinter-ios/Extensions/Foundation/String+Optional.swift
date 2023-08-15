@@ -12,7 +12,7 @@ extension Optional where Wrapped == String {
     var isEnabled: Bool {
         switch self {
         case .some(let value):
-            return !value.isEmpty
+            return value.isEmpty == false
             
         case .none:
             return false

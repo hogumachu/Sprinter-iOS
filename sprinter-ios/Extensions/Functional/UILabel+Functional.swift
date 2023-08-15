@@ -33,4 +33,16 @@ extension UILabel {
         return self
     }
     
+    @discardableResult
+    func numberOfLines(_ lines: Int) -> Self {
+        self.numberOfLines = lines
+        return self
+    }
+    
+    @discardableResult
+    func lineBreakStrategy(_ strategy: NSParagraphStyle.LineBreakStrategy) -> Self {
+        self.lineBreakStrategy = strategy
+        return self
+    }
+    
 }

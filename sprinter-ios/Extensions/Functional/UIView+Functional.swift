@@ -33,4 +33,16 @@ extension UIView {
         return self
     }
     
+    @discardableResult
+    func isHidden(_ isHidden: Bool) -> Self {
+        self.isHidden = isHidden
+        return self
+    }
+    
+    @discardableResult
+    func registerSuperView(_ superView: UIView) -> Self {
+        superView.addSubview(self)
+        return self
+    }
+    
 }
