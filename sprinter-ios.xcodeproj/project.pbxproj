@@ -15,6 +15,15 @@
 		F12F9A922A8BA22400840C45 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A912A8BA22400840C45 /* UIColor+Hex.swift */; };
 		F12F9A942A8BA3EA00840C45 /* UIFont+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A932A8BA3EA00840C45 /* UIFont+DesignSystem.swift */; };
 		F1B8966F2A8BAE7200AF861F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B8966E2A8BAE7200AF861F /* HomeViewController.swift */; };
+		F1B896722A8BB1EF00AF861F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B896712A8BB1EF00AF861F /* BaseViewController.swift */; };
+		F1B896752A8BB26200AF861F /* MissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B896742A8BB26200AF861F /* MissionTableViewCell.swift */; };
+		F1B896782A8BB2A500AF861F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F1B896772A8BB2A500AF861F /* SnapKit */; };
+		F1B8967A2A8BB2D800AF861F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B896792A8BB2D800AF861F /* BaseTableViewCell.swift */; };
+		F1B8967C2A8BB3F700AF861F /* UIView+Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B8967B2A8BB3F700AF861F /* UIView+Functional.swift */; };
+		F1B8967F2A8BB55A00AF861F /* UILabel+Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B8967E2A8BB55A00AF861F /* UILabel+Functional.swift */; };
+		F1B896822A8BB6B800AF861F /* UITableView+Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B896812A8BB6B800AF861F /* UITableView+Functional.swift */; };
+		F1B896852A8BB71B00AF861F /* UITableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B896842A8BB71B00AF861F /* UITableView+Cell.swift */; };
+		F1B896872A8BBA4A00AF861F /* UITableViewCell+Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B896862A8BBA4A00AF861F /* UITableViewCell+Functional.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +37,14 @@
 		F12F9A912A8BA22400840C45 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		F12F9A932A8BA3EA00840C45 /* UIFont+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+DesignSystem.swift"; sourceTree = "<group>"; };
 		F1B8966E2A8BAE7200AF861F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F1B896712A8BB1EF00AF861F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F1B896742A8BB26200AF861F /* MissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionTableViewCell.swift; sourceTree = "<group>"; };
+		F1B896792A8BB2D800AF861F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		F1B8967B2A8BB3F700AF861F /* UIView+Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Functional.swift"; sourceTree = "<group>"; };
+		F1B8967E2A8BB55A00AF861F /* UILabel+Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Functional.swift"; sourceTree = "<group>"; };
+		F1B896812A8BB6B800AF861F /* UITableView+Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Functional.swift"; sourceTree = "<group>"; };
+		F1B896842A8BB71B00AF861F /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
+		F1B896862A8BBA4A00AF861F /* UITableViewCell+Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Functional.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1B896782A8BB2A500AF861F /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +80,7 @@
 			children = (
 				F12F9A9B2A8BA83100840C45 /* App */,
 				F12F9A8E2A8BA1A900840C45 /* Extensions */,
-				F12F9A952A8BA80800840C45 /* Scene */,
+				F12F9A952A8BA80800840C45 /* Feature */,
 			);
 			path = "sprinter-ios";
 			sourceTree = "<group>";
@@ -70,19 +88,21 @@
 		F12F9A8E2A8BA1A900840C45 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F12F9A8F2A8BA1BB00840C45 /* UIColor+DesignSystem.swift */,
+				F1B896802A8BB64800AF861F /* DesignSystem */,
+				F1B8967D2A8BB54E00AF861F /* Functional */,
 				F12F9A912A8BA22400840C45 /* UIColor+Hex.swift */,
-				F12F9A932A8BA3EA00840C45 /* UIFont+DesignSystem.swift */,
+				F1B896842A8BB71B00AF861F /* UITableView+Cell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		F12F9A952A8BA80800840C45 /* Scene */ = {
+		F12F9A952A8BA80800840C45 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				F1B8966D2A8BAE6B00AF861F /* Home */,
+				F1B896702A8BB1E400AF861F /* Common */,
+				F1B8966D2A8BAE6B00AF861F /* HomeScene */,
 			);
-			path = Scene;
+			path = Feature;
 			sourceTree = "<group>";
 		};
 		F12F9A9B2A8BA83100840C45 /* App */ = {
@@ -97,12 +117,50 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		F1B8966D2A8BAE6B00AF861F /* Home */ = {
+		F1B8966D2A8BAE6B00AF861F /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				F1B896732A8BB25100AF861F /* Component */,
 				F1B8966E2A8BAE7200AF861F /* HomeViewController.swift */,
 			);
-			path = Home;
+			path = HomeScene;
+			sourceTree = "<group>";
+		};
+		F1B896702A8BB1E400AF861F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F1B896712A8BB1EF00AF861F /* BaseViewController.swift */,
+				F1B896792A8BB2D800AF861F /* BaseTableViewCell.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F1B896732A8BB25100AF861F /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F1B896742A8BB26200AF861F /* MissionTableViewCell.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		F1B8967D2A8BB54E00AF861F /* Functional */ = {
+			isa = PBXGroup;
+			children = (
+				F1B8967B2A8BB3F700AF861F /* UIView+Functional.swift */,
+				F1B8967E2A8BB55A00AF861F /* UILabel+Functional.swift */,
+				F1B896812A8BB6B800AF861F /* UITableView+Functional.swift */,
+				F1B896862A8BBA4A00AF861F /* UITableViewCell+Functional.swift */,
+			);
+			path = Functional;
+			sourceTree = "<group>";
+		};
+		F1B896802A8BB64800AF861F /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				F12F9A8F2A8BA1BB00840C45 /* UIColor+DesignSystem.swift */,
+				F12F9A932A8BA3EA00840C45 /* UIFont+DesignSystem.swift */,
+			);
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +179,9 @@
 			dependencies = (
 			);
 			name = "sprinter-ios";
+			packageProductDependencies = (
+				F1B896772A8BB2A500AF861F /* SnapKit */,
+			);
 			productName = "sprinter-ios";
 			productReference = F12F9A762A8B9D7200840C45 /* sprinter-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -149,6 +210,9 @@
 				Base,
 			);
 			mainGroup = F12F9A6D2A8B9D7200840C45;
+			packageReferences = (
+				F1B896762A8BB2A500AF861F /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = F12F9A772A8B9D7200840C45 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -175,11 +239,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1B8967F2A8BB55A00AF861F /* UILabel+Functional.swift in Sources */,
 				F12F9A902A8BA1BB00840C45 /* UIColor+DesignSystem.swift in Sources */,
+				F1B896822A8BB6B800AF861F /* UITableView+Functional.swift in Sources */,
 				F12F9A7A2A8B9D7200840C45 /* AppDelegate.swift in Sources */,
+				F1B896752A8BB26200AF861F /* MissionTableViewCell.swift in Sources */,
+				F1B896852A8BB71B00AF861F /* UITableView+Cell.swift in Sources */,
+				F1B896872A8BBA4A00AF861F /* UITableViewCell+Functional.swift in Sources */,
+				F1B8967C2A8BB3F700AF861F /* UIView+Functional.swift in Sources */,
 				F12F9A7C2A8B9D7200840C45 /* SceneDelegate.swift in Sources */,
+				F1B8967A2A8BB2D800AF861F /* BaseTableViewCell.swift in Sources */,
 				F12F9A922A8BA22400840C45 /* UIColor+Hex.swift in Sources */,
 				F12F9A942A8BA3EA00840C45 /* UIFont+DesignSystem.swift in Sources */,
+				F1B896722A8BB1EF00AF861F /* BaseViewController.swift in Sources */,
 				F1B8966F2A8BAE7200AF861F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +468,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F1B896762A8BB2A500AF861F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F1B896772A8BB2A500AF861F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1B896762A8BB2A500AF861F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F12F9A6E2A8B9D7200840C45 /* Project object */;
 }
