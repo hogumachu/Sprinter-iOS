@@ -14,7 +14,7 @@ struct ArrowTableViewCellModel {
     let description: String?
     let inset: UIEdgeInsets
     
-    init(title: String, description: String?, inset: UIEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)) {
+    init(title: String, description: String?, inset: UIEdgeInsets = .left(20)) {
         self.title = title
         self.description = description
         self.inset = inset
