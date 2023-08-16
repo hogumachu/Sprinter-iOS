@@ -11,6 +11,10 @@ import ReactorKit
 
 final class RootReactor: Reactor {
     
+    struct Dependency {
+        let router: AppRouterType
+    }
+    
     struct State {
         
     }
@@ -23,8 +27,11 @@ final class RootReactor: Reactor {
         
     }
     
-    
-    
     var initialState = State()
+    let dependency: Dependency
+    
+    init(dependency: Dependency) {
+        self.dependency = dependency
+    }
     
 }

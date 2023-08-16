@@ -41,7 +41,7 @@ final class MissionCreateViewController: BaseViewController<MissionCreateReactor
         
         navigationView
             .backgroundColor(.black)
-            .configure(.init(type: .close, title: "미션 작성", font: .mediumSB))
+            .configure(.init(type: .back, title: "미션 작성", font: .mediumSB))
         
         addButton
             .setStyle(.normal)
@@ -62,7 +62,7 @@ extension MissionCreateViewController {
             .disposed(by: disposeBag)
         
         navigationView.rx.leftButtonTap
-            .map { Reactor.Action.closeButtonDidTap }
+            .map { Reactor.Action.backButtonDidTap }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }
