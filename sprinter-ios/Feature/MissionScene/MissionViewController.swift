@@ -37,6 +37,14 @@ final class MissionViewController: BaseViewController {
         addButton.setStyle(.line)
             .setTitle(title: "미션 추가하기", for: .normal)
             .cornerRadius(48 / 2)
+            .addTapGesture(target: self, action: #selector(addButtonDidTap(_:)))
+    }
+    
+    @objc private func addButtonDidTap(_ sender: UIButton) {
+        let createVC = MissionCreateViewController()
+        let navigationController = UINavigationController(rootViewController: createVC)
+        navigationController.modalPresentationStyle = .overFullScreen
+        self.present(navigationController, animated: true)
     }
     
 }

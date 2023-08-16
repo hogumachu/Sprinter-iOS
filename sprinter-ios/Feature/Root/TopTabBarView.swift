@@ -9,7 +9,7 @@ import UIKit
 
 protocol TopTabBarViewDelegate: AnyObject {
     
-    func topTabBarViewDidSelectedAt(_ view: TopTabBarView, at index: Int, item: TopTabBarItem)
+    func topTabBarViewDidSelectAt(_ view: TopTabBarView, at index: Int, item: TopTabBarItem)
     
 }
 
@@ -76,6 +76,13 @@ final class TopTabBarView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func updateSelection(index: Int) {
+        labels.enumerated()
+            .forEach { offset, element in
+                element.isSelected = offset == index
+            }
+    }
+    
     @discardableResult
     func addTopTabBarItem(_ item: TopTabBarItem) -> Self {
         let isSelected = labels.isEmpty
@@ -104,7 +111,7 @@ final class TopTabBarView: UIView {
         labels.enumerated()
             .forEach { offset, element in
                 if element.item == label.item {
-                    delegate?.topTabBarViewDidSelectedAt(self, at: offset, item: element.item)
+                    delegate?.topTabBarViewDidSelectAt(self, at: offset, item: element.item)
                 }
                 
                 element.isSelected = element.item == label.item
