@@ -10,12 +10,6 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-protocol NavigationViewDelegate: AnyObject {
-    
-    func navigationViewDidTapLeftButton(_ view: NavigationView)
-    
-}
-
 enum NavigationViewType {
     
     case title
@@ -56,8 +50,6 @@ struct NavigationViewModel {
 
 final class NavigationView: BaseView {
     
-    weak var delegate: NavigationViewDelegate?
-    
     private(set) var model: NavigationViewModel?
     fileprivate let leftButton = NavigationViewButton(frame: .zero)
     fileprivate let titleLabel = UILabel(frame: .zero)
@@ -76,17 +68,11 @@ final class NavigationView: BaseView {
         return self
     }
     
-    @discardableResult
-    func setDelegate(_ delegate: NavigationViewDelegate?) -> Self {
-        self.delegate = delegate
-        return self
-    }
-    
     override func setupLayout() {
         titleLabel.registerSuperView(self)
             .snp.makeConstraints { make in
                 make.centerY.equalToSuperview()
-                make.leading.trailing.equalToSuperview().inset(60)
+                make.leading.trailing.equalToSuperview().inset(66)
             }
         
         leftButton.registerSuperView(self)
@@ -103,15 +89,10 @@ final class NavigationView: BaseView {
             .tintColor(.white)
             .contentMode(.center)
             .adjustsImageWhenHighlighted(true)
-            .addTapGesture(target: self, action: #selector(leftButtonDidTap(_:)))
         
         titleLabel
             .textColor(.white)
             .textAlignment(.center)
-    }
-    
-    @objc private func leftButtonDidTap(_ sender: UIButton) {
-        delegate?.navigationViewDidTapLeftButton(self)
     }
     
 }

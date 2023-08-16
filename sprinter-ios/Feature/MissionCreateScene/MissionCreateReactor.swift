@@ -11,15 +11,17 @@ import ReactorKit
 
 final class MissionCreateReactor: Reactor {
     
+    struct Dependency {
+        let router: AppRouterType
+    }
+    
     struct State {
         
     }
     
     enum Action {
-        
-        case closeButtonDidTap
         case addButtonDidTap
-        
+        case backButtonDidTap
     }
     
     enum Mutation {
@@ -27,5 +29,21 @@ final class MissionCreateReactor: Reactor {
     }
     
     var initialState = State()
+    let dependency: Dependency
+    
+    init(dependency: Dependency) {
+        self.dependency = dependency
+    }
+    
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .addButtonDidTap:
+            return .empty()
+            
+        case .backButtonDidTap:
+            dependency.router.close(using: .pop, animated: true, completion: nil)
+            return .empty()
+        }
+    }
     
 }

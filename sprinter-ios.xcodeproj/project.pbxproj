@@ -19,6 +19,12 @@
 		F11821AC2A8CC18600583847 /* RootReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821AB2A8CC18600583847 /* RootReactor.swift */; };
 		F11821B02A8CF6A200583847 /* UIPageViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821AF2A8CF6A200583847 /* UIPageViewController+Rx.swift */; };
 		F11821B22A8CF73C00583847 /* RxPageViewControllerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821B12A8CF73C00583847 /* RxPageViewControllerDelegateProxy.swift */; };
+		F11821B52A8CFE5400583847 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821B42A8CFE5400583847 /* AppRouter.swift */; };
+		F11821B72A8CFE7800583847 /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821B62A8CFE7800583847 /* SceneFactory.swift */; };
+		F11821B92A8CFFB000583847 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821B82A8CFFB000583847 /* UIApplication+.swift */; };
+		F11821BB2A8CFFD300583847 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821BA2A8CFFD300583847 /* UIViewController+.swift */; };
+		F11821BE2A8D05C800583847 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = F11821BD2A8D05C800583847 /* Swinject */; };
+		F11821C02A8D05DE00583847 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821BF2A8D05DE00583847 /* DependencyInjector.swift */; };
 		F12F9A7A2A8B9D7200840C45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A792A8B9D7200840C45 /* AppDelegate.swift */; };
 		F12F9A7C2A8B9D7200840C45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A7B2A8B9D7200840C45 /* SceneDelegate.swift */; };
 		F12F9A832A8B9D7400840C45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12F9A822A8B9D7400840C45 /* Assets.xcassets */; };
@@ -63,6 +69,11 @@
 		F11821AB2A8CC18600583847 /* RootReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootReactor.swift; sourceTree = "<group>"; };
 		F11821AF2A8CF6A200583847 /* UIPageViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Rx.swift"; sourceTree = "<group>"; };
 		F11821B12A8CF73C00583847 /* RxPageViewControllerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxPageViewControllerDelegateProxy.swift; sourceTree = "<group>"; };
+		F11821B42A8CFE5400583847 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		F11821B62A8CFE7800583847 /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
+		F11821B82A8CFFB000583847 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		F11821BA2A8CFFD300583847 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		F11821BF2A8D05DE00583847 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
 		F12F9A762A8B9D7200840C45 /* sprinter-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sprinter-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12F9A792A8B9D7200840C45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F12F9A7B2A8B9D7200840C45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +118,7 @@
 			files = (
 				F11821992A8CBF2B00583847 /* RxRelay in Frameworks */,
 				F11821972A8CBF2B00583847 /* RxCocoa in Frameworks */,
+				F11821BE2A8D05C800583847 /* Swinject in Frameworks */,
 				F118219B2A8CBF2B00583847 /* RxSwift in Frameworks */,
 				F11821A12A8CBF5B00583847 /* RxDataSources in Frameworks */,
 				F118219E2A8CBF4400583847 /* ReactorKit in Frameworks */,
@@ -124,6 +136,16 @@
 				F11821B12A8CF73C00583847 /* RxPageViewControllerDelegateProxy.swift */,
 			);
 			path = ReactiveX;
+			sourceTree = "<group>";
+		};
+		F11821B32A8CFE4D00583847 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				F11821B42A8CFE5400583847 /* AppRouter.swift */,
+				F11821B62A8CFE7800583847 /* SceneFactory.swift */,
+				F11821BF2A8D05DE00583847 /* DependencyInjector.swift */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		F12F9A6D2A8B9D7200840C45 = {
@@ -163,6 +185,8 @@
 				F1B896842A8BB71B00AF861F /* UITableView+Cell.swift */,
 				F1B896A02A8C783400AF861F /* UIView+.swift */,
 				F1B896A92A8C889800AF861F /* UIEdgeInsets+.swift */,
+				F11821B82A8CFFB000583847 /* UIApplication+.swift */,
+				F11821BA2A8CFFD300583847 /* UIViewController+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -203,6 +227,7 @@
 		F1B896702A8BB1E400AF861F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F11821B32A8CFE4D00583847 /* Class */,
 				F1B896AF2A8C8D6400AF861F /* View */,
 				F1B896902A8BCCE700AF861F /* Button */,
 				F1B896882A8BC01500AF861F /* Cell */,
@@ -324,6 +349,7 @@
 				F118219A2A8CBF2B00583847 /* RxSwift */,
 				F118219D2A8CBF4400583847 /* ReactorKit */,
 				F11821A02A8CBF5B00583847 /* RxDataSources */,
+				F11821BD2A8D05C800583847 /* Swinject */,
 			);
 			productName = "sprinter-ios";
 			productReference = F12F9A762A8B9D7200840C45 /* sprinter-ios.app */;
@@ -358,6 +384,7 @@
 				F11821952A8CBF2B00583847 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				F118219C2A8CBF4400583847 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				F118219F2A8CBF5B00583847 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				F11821BC2A8D05C800583847 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = F12F9A772A8B9D7200840C45 /* Products */;
 			projectDirPath = "";
@@ -388,6 +415,7 @@
 				F1B8967F2A8BB55A00AF861F /* UILabel+Functional.swift in Sources */,
 				F12F9A902A8BA1BB00840C45 /* UIColor+DesignSystem.swift in Sources */,
 				F1B896822A8BB6B800AF861F /* UITableView+Functional.swift in Sources */,
+				F11821C02A8D05DE00583847 /* DependencyInjector.swift in Sources */,
 				F12F9A7A2A8B9D7200840C45 /* AppDelegate.swift in Sources */,
 				F1B896752A8BB26200AF861F /* MissionTableViewCell.swift in Sources */,
 				F1B8969B2A8C6ED900AF861F /* TopTabBarView.swift in Sources */,
@@ -396,8 +424,10 @@
 				F1B896872A8BBA4A00AF861F /* UITableViewCell+Functional.swift in Sources */,
 				F11821A52A8CC07000583847 /* MissionReactor.swift in Sources */,
 				F1B8968A2A8BC02F00AF861F /* ArrowTableViewCell.swift in Sources */,
+				F11821B72A8CFE7800583847 /* SceneFactory.swift in Sources */,
 				F1B8967C2A8BB3F700AF861F /* UIView+Functional.swift in Sources */,
 				F1B896A82A8C884E00AF861F /* UIScrollView+Functional.swift in Sources */,
+				F11821BB2A8CFFD300583847 /* UIViewController+.swift in Sources */,
 				F1B896942A8BCEDF00AF861F /* UIButton+Functional.swift in Sources */,
 				F11821B02A8CF6A200583847 /* UIPageViewController+Rx.swift in Sources */,
 				F1B896AE2A8C8D5A00AF861F /* MissionCreateViewController.swift in Sources */,
@@ -408,6 +438,8 @@
 				F11821A32A8CC01300583847 /* HomeReactor.swift in Sources */,
 				F12F9A7C2A8B9D7200840C45 /* SceneDelegate.swift in Sources */,
 				F1B8968C2A8BC1A200AF861F /* String+Optional.swift in Sources */,
+				F11821B92A8CFFB000583847 /* UIApplication+.swift in Sources */,
+				F11821B52A8CFE5400583847 /* AppRouter.swift in Sources */,
 				F1B8967A2A8BB2D800AF861F /* BaseTableViewCell.swift in Sources */,
 				F12F9A922A8BA22400840C45 /* UIColor+Hex.swift in Sources */,
 				F12F9A942A8BA3EA00840C45 /* UIFont+DesignSystem.swift in Sources */,
@@ -664,6 +696,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		F11821BC2A8D05C800583847 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		F1B896A22A8C791300AF861F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -699,6 +739,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F118219F2A8CBF5B00583847 /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
+		};
+		F11821BD2A8D05C800583847 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F11821BC2A8D05C800583847 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 		F1B896A32A8C791300AF861F /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -11,15 +11,29 @@ import RxSwift
 import RxCocoa
 import ReactorKit
 
+struct RootPageModel {
+    let title: String
+    let viewController: UIViewController
+}
+
 final class RootViewController: BaseViewController<RootReactor> {
     
     private var currentPage = 0
     private let topTabBar = TopTabBarView(frame: .zero)
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
-    private lazy var pageViewControllers: [UIViewController] = [
-        homeViewController,
-        missionViewController
-    ]
+    private var pageViewControllers: [UIViewController] = []
+    
+    func setupPages(_ pages: [RootPageModel]) {
+        pageViewControllers = pages.map { $0.viewController }
+        pages.map { $0.title }
+            .forEach { topTabBar.addTopTabBarItem(.init(title: $0)) }
+        guard let firstViewController = pages.first?.viewController else { return }
+        pageViewController.setViewControllers([firstViewController], direction: .forward, animated: true)
+    }
+    
+    func setupViewControllers(_ viewControllers: [UIViewController]) {
+        self.pageViewControllers = viewControllers
+    }
     
     override func bind(reactor: RootReactor) {
         bindAction(reactor)
@@ -44,28 +58,8 @@ final class RootViewController: BaseViewController<RootReactor> {
     }
     
     override func setupAttributes() {
-        topTabBar.addTopTabBarItem(.init(title: "홈"))
-            .addTopTabBarItem(.init(title: "미션"))
-        
         pageViewController.dataSource = self
-        pageViewController.setViewControllers([homeViewController], direction: .forward, animated: true)
     }
-    
-    private lazy var homeViewController: UINavigationController = {
-        let reactor = HomeReactor()
-        let homeViewController = HomeViewController(reactor: reactor)
-        let navigationController = UINavigationController(rootViewController: homeViewController)
-        navigationController.setNavigationBarHidden(true, animated: false)
-        return navigationController
-    }()
-    
-    private lazy var missionViewController: UINavigationController = {
-        let reactor = MissionReactor()
-        let missionViewController = MissionViewController(reactor: reactor)
-        let navigationController = UINavigationController(rootViewController: missionViewController)
-        navigationController.setNavigationBarHidden(true, animated: false)
-        return navigationController
-    }()
     
 }
 
