@@ -31,7 +31,7 @@ final class MissionTableViewCell: BaseTableViewCell {
     override func setupLayout() {
         contentView.addSubview(containerView)
         containerView.snp.makeConstraints { make in
-            let inset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+            let inset = UIEdgeInsets.horizontal(20)
             make.edges.equalToSuperview().inset(inset)
         }
         

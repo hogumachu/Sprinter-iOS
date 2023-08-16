@@ -121,7 +121,7 @@ final class ActionButton: UIButton {
             .backgroundColor(style.backgroundColor)
             .titleColor(style.textColor, for: .normal)
             .titleColor(style.disabledTextColor, for: .disabled)
-            .contentEdgeInsets(.init(top: 10, left: 20, bottom: 10, right: 20))
+            .contentEdgeInsets(.verticalHorizontal(10, horizontalInset: 20))
     }
     
     private func setupPressedView() {
