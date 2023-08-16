@@ -44,6 +44,7 @@ final class MissionViewController: BaseViewController {
         let createVC = MissionCreateViewController()
         let navigationController = UINavigationController(rootViewController: createVC)
         navigationController.modalPresentationStyle = .overFullScreen
+        navigationController.setNavigationBarHidden(true, animated: false)
         self.present(navigationController, animated: true)
     }
     

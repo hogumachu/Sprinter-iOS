@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F118218F2A8CA99B00583847 /* NavigationViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F118218E2A8CA99B00583847 /* NavigationViewButton.swift */; };
 		F12F9A7A2A8B9D7200840C45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A792A8B9D7200840C45 /* AppDelegate.swift */; };
 		F12F9A7C2A8B9D7200840C45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A7B2A8B9D7200840C45 /* SceneDelegate.swift */; };
 		F12F9A832A8B9D7400840C45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12F9A822A8B9D7400840C45 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F118218E2A8CA99B00583847 /* NavigationViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewButton.swift; sourceTree = "<group>"; };
 		F12F9A762A8B9D7200840C45 /* sprinter-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sprinter-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12F9A792A8B9D7200840C45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F12F9A7B2A8B9D7200840C45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				F1B896912A8BCD0000AF861F /* ActionButton.swift */,
+				F118218E2A8CA99B00583847 /* NavigationViewButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				F1B896722A8BB1EF00AF861F /* BaseViewController.swift in Sources */,
 				F1B8969F2A8C77C100AF861F /* String+.swift in Sources */,
 				F1B896B72A8C9F4F00AF861F /* Array+Safe.swift in Sources */,
+				F118218F2A8CA99B00583847 /* NavigationViewButton.swift in Sources */,
 				F1B896B52A8C963600AF861F /* BaseView.swift in Sources */,
 				F1B8966F2A8BAE7200AF861F /* HomeViewController.swift in Sources */,
 				F1B896972A8C6B8E00AF861F /* MissionViewController.swift in Sources */,
