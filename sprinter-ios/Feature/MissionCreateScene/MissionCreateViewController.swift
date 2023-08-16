@@ -7,11 +7,18 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
+import ReactorKit
 
-final class MissionCreateViewController: BaseViewController {
+final class MissionCreateViewController: BaseViewController<MissionCreateReactor> {
     
     private let navigationView = NavigationView(frame: .zero)
     private let addButton = ActionButton(frame: .zero)
+    
+    override func bind(reactor: MissionCreateReactor) {
+        bindAction(reactor)
+    }
     
     override func setupLayout() {
         navigationView.registerSuperView(view)
@@ -35,7 +42,6 @@ final class MissionCreateViewController: BaseViewController {
         navigationView
             .backgroundColor(.black)
             .configure(.init(type: .close, title: "미션 작성", font: .mediumSB))
-            .setDelegate(self)
         
         addButton
             .setStyle(.normal)
@@ -45,10 +51,20 @@ final class MissionCreateViewController: BaseViewController {
     
 }
 
-extension MissionCreateViewController: NavigationViewDelegate {
+// MARK: - Bind
+
+extension MissionCreateViewController {
     
-    func navigationViewDidTapLeftButton(_ view: NavigationView) {
-        navigationController?.dismiss(animated: true)
+    private func bindAction(_ reactor: MissionCreateReactor) {
+        addButton.rx.tap
+            .map { Reactor.Action.addButtonDidTap }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        navigationView.rx.leftButtonTap
+            .map { Reactor.Action.closeButtonDidTap }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
     
 }

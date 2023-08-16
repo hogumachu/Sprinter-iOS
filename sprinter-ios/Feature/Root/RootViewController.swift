@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class RootViewController: BaseViewController {
+final class RootViewController: BaseViewController<RootReactor> {
     
     private var currentPage = 0
     private let topTabBar = TopTabBarView(frame: .zero)
@@ -47,14 +47,16 @@ final class RootViewController: BaseViewController {
     }
     
     private lazy var homeViewController: UINavigationController = {
-        let homeViewController = HomeViewController()
+        let reactor = HomeReactor()
+        let homeViewController = HomeViewController(reactor: reactor)
         let navigationController = UINavigationController(rootViewController: homeViewController)
         navigationController.setNavigationBarHidden(true, animated: false)
         return navigationController
     }()
     
     private lazy var missionViewController: UINavigationController = {
-        let missionViewController = MissionViewController()
+        let reactor = MissionReactor()
+        let missionViewController = MissionViewController(reactor: reactor)
         let navigationController = UINavigationController(rootViewController: missionViewController)
         navigationController.setNavigationBarHidden(true, animated: false)
         return navigationController
