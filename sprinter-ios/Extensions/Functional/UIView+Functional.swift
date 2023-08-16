@@ -65,4 +65,17 @@ extension UIView {
         return self
     }
     
+    @discardableResult
+    func tintColor(_ color: UIColor) -> Self {
+        self.tintColor = color
+        return self
+    }
+    
+    @discardableResult
+    func contentMode(_ mode: ContentMode) -> Self {
+        self.contentMode = mode
+        return self
+    }
+    
+    
 }

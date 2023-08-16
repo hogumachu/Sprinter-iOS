@@ -27,4 +27,16 @@ extension UIButton {
         return self
     }
     
+    @discardableResult
+    func adjustsImageWhenHighlighted(_ adjustsImageWhenHighlighted: Bool) -> Self {
+        self.adjustsImageWhenHighlighted = adjustsImageWhenHighlighted
+        return self
+    }
+    
+    @discardableResult
+    func setImage(image: UIImage?, state: UIButton.State) -> Self {
+        self.setImage(image, for: state)
+        return self
+    }
+    
 }
