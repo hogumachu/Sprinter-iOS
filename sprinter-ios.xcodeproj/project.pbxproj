@@ -17,6 +17,8 @@
 		F11821A52A8CC07000583847 /* MissionReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821A42A8CC07000583847 /* MissionReactor.swift */; };
 		F11821A72A8CC08300583847 /* MissionCreateReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821A62A8CC08300583847 /* MissionCreateReactor.swift */; };
 		F11821AC2A8CC18600583847 /* RootReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821AB2A8CC18600583847 /* RootReactor.swift */; };
+		F11821B02A8CF6A200583847 /* UIPageViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821AF2A8CF6A200583847 /* UIPageViewController+Rx.swift */; };
+		F11821B22A8CF73C00583847 /* RxPageViewControllerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821B12A8CF73C00583847 /* RxPageViewControllerDelegateProxy.swift */; };
 		F12F9A7A2A8B9D7200840C45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A792A8B9D7200840C45 /* AppDelegate.swift */; };
 		F12F9A7C2A8B9D7200840C45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A7B2A8B9D7200840C45 /* SceneDelegate.swift */; };
 		F12F9A832A8B9D7400840C45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12F9A822A8B9D7400840C45 /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		F11821A42A8CC07000583847 /* MissionReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionReactor.swift; sourceTree = "<group>"; };
 		F11821A62A8CC08300583847 /* MissionCreateReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCreateReactor.swift; sourceTree = "<group>"; };
 		F11821AB2A8CC18600583847 /* RootReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootReactor.swift; sourceTree = "<group>"; };
+		F11821AF2A8CF6A200583847 /* UIPageViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Rx.swift"; sourceTree = "<group>"; };
+		F11821B12A8CF73C00583847 /* RxPageViewControllerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxPageViewControllerDelegateProxy.swift; sourceTree = "<group>"; };
 		F12F9A762A8B9D7200840C45 /* sprinter-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sprinter-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12F9A792A8B9D7200840C45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F12F9A7B2A8B9D7200840C45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F11821AE2A8CF68A00583847 /* ReactiveX */ = {
+			isa = PBXGroup;
+			children = (
+				F11821AF2A8CF6A200583847 /* UIPageViewController+Rx.swift */,
+				F11821B12A8CF73C00583847 /* RxPageViewControllerDelegateProxy.swift */,
+			);
+			path = ReactiveX;
+			sourceTree = "<group>";
+		};
 		F12F9A6D2A8B9D7200840C45 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +155,7 @@
 		F12F9A8E2A8BA1A900840C45 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F11821AE2A8CF68A00583847 /* ReactiveX */,
 				F1B8968D2A8BC20D00AF861F /* Foundation */,
 				F1B896802A8BB64800AF861F /* DesignSystem */,
 				F1B8967D2A8BB54E00AF861F /* Functional */,
@@ -385,8 +399,10 @@
 				F1B8967C2A8BB3F700AF861F /* UIView+Functional.swift in Sources */,
 				F1B896A82A8C884E00AF861F /* UIScrollView+Functional.swift in Sources */,
 				F1B896942A8BCEDF00AF861F /* UIButton+Functional.swift in Sources */,
+				F11821B02A8CF6A200583847 /* UIPageViewController+Rx.swift in Sources */,
 				F1B896AE2A8C8D5A00AF861F /* MissionCreateViewController.swift in Sources */,
 				F1B896B12A8C8D6B00AF861F /* NavigationView.swift in Sources */,
+				F11821B22A8CF73C00583847 /* RxPageViewControllerDelegateProxy.swift in Sources */,
 				F1B896A12A8C783400AF861F /* UIView+.swift in Sources */,
 				F1B8968F2A8BC2E200AF861F /* UIStackView+Functional.swift in Sources */,
 				F11821A32A8CC01300583847 /* HomeReactor.swift in Sources */,

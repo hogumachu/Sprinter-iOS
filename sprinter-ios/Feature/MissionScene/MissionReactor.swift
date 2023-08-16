@@ -16,14 +16,12 @@ final class MissionReactor: Reactor {
     }
     
     enum Action {
-        
+        case addButtonDidTap
     }
     
     enum Mutation {
         
     }
-    
-    
     
     var initialState = State()
     
