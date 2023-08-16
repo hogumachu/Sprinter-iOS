@@ -57,4 +57,12 @@ extension UIView {
         return self
     }
     
+    @discardableResult
+    func addTapGesture(target: Any?, action: Selector?) -> Self {
+        isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: target, action: action)
+        addGestureRecognizer(gesture)
+        return self
+    }
+    
 }

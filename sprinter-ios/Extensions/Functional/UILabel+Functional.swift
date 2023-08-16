@@ -45,4 +45,10 @@ extension UILabel {
         return self
     }
     
+    @discardableResult
+    func attributedText(_ text: NSAttributedString) -> Self {
+        attributedText = text
+        return self
+    }
+    
 }
