@@ -23,19 +23,12 @@ final class HomeViewController: BaseViewController {
     ]
     
     private let tableView = UITableView(frame: .zero)
-    private let actionButton = ActionButton(frame: .zero)
     
     override func setupLayout() {
         tableView.registerSuperView(view)
             .snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        actionButton.registerSuperView(view)
-            .snp.makeConstraints { make in
-                make.trailing.equalToSuperview().offset(-20)
-                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
-                make.height.equalTo(48)
-            }
     }
     
     override func setupAttributes() {
@@ -46,10 +39,6 @@ final class HomeViewController: BaseViewController {
             .registerCell(MissionTableViewCell.self)
             .setDelegate(self)
             .setDataSource(self)
-        
-        actionButton.setStyle(.line)
-            .setTitle(title: "미션 추가하기", for: .normal)
-            .cornerRadius(48 / 2)
     }
     
 }
