@@ -63,7 +63,6 @@ final class RootViewController: BaseViewController {
 }
 
 extension RootViewController: TopTabBarViewDelegate {
-    
     func topTabBarViewDidSelectAt(_ view: TopTabBarView, at index: Int, item: TopTabBarItem) {
         guard currentPage != index, pageViewControllers.count > index else { return }
         guard let selectedViewController = pageViewControllers[safe: index] else { return }
