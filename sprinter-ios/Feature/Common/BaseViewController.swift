@@ -6,8 +6,21 @@
 //
 
 import UIKit
+import ReactorKit
 
-class BaseViewController: UIViewController {
+class BaseViewController<ReactorType: Reactor>: UIViewController, View {
+    
+    typealias Reactor = ReactorType
+    var disposeBag = DisposeBag()
+    
+    init(reactor: Reactor) {
+        super.init(nibName: nil, bundle: nil)
+        self.reactor = reactor
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +28,8 @@ class BaseViewController: UIViewController {
         setupAttributes()
     }
     
-    func setupLayout() { }
-    func setupAttributes() { }
+    func bind(reactor: ReactorType) {}
+    func setupLayout() {}
+    func setupAttributes() {}
     
 }

@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 protocol NavigationViewDelegate: AnyObject {
     
@@ -57,8 +59,8 @@ final class NavigationView: BaseView {
     weak var delegate: NavigationViewDelegate?
     
     private(set) var model: NavigationViewModel?
-    private let leftButton = NavigationViewButton(frame: .zero)
-    private let titleLabel = UILabel(frame: .zero)
+    fileprivate let leftButton = NavigationViewButton(frame: .zero)
+    fileprivate let titleLabel = UILabel(frame: .zero)
     
     @discardableResult
     func configure(_ model: NavigationViewModel) -> Self {
@@ -110,6 +112,15 @@ final class NavigationView: BaseView {
     
     @objc private func leftButtonDidTap(_ sender: UIButton) {
         delegate?.navigationViewDidTapLeftButton(self)
+    }
+    
+}
+
+extension Reactive where Base: NavigationView {
+    
+    var leftButtonTap: ControlEvent<Void> {
+        let source = base.leftButton.rx.tap
+        return ControlEvent(events: source)
     }
     
 }

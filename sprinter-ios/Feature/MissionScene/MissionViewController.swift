@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class MissionViewController: BaseViewController {
+final class MissionViewController: BaseViewController<MissionReactor> {
     
     private let tableView = UITableView(frame: .zero)
     private let addButton = ActionButton(frame: .zero)
@@ -41,11 +41,11 @@ final class MissionViewController: BaseViewController {
     }
     
     @objc private func addButtonDidTap(_ sender: UIButton) {
-        let createVC = MissionCreateViewController()
-        let navigationController = UINavigationController(rootViewController: createVC)
-        navigationController.modalPresentationStyle = .overFullScreen
-        navigationController.setNavigationBarHidden(true, animated: false)
-        self.present(navigationController, animated: true)
+//        let createVC = MissionCreateViewController()
+//        let navigationController = UINavigationController(rootViewController: createVC)
+//        navigationController.modalPresentationStyle = .overFullScreen
+//        navigationController.setNavigationBarHidden(true, animated: false)
+//        self.present(navigationController, animated: true)
     }
     
 }

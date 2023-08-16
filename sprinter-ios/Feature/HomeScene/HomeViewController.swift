@@ -7,8 +7,9 @@
 
 import UIKit
 import SnapKit
+import ReactorKit
 
-final class HomeViewController: BaseViewController {
+final class HomeViewController: BaseViewController<HomeReactor> {
     
     // TODO: - Remove Mock Data
     private let mockModel: [MissionTableViewCellModel] = [
