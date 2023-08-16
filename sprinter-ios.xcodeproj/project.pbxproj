@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		F118218F2A8CA99B00583847 /* NavigationViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F118218E2A8CA99B00583847 /* NavigationViewButton.swift */; };
+		F11821972A8CBF2B00583847 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F11821962A8CBF2B00583847 /* RxCocoa */; };
+		F11821992A8CBF2B00583847 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = F11821982A8CBF2B00583847 /* RxRelay */; };
+		F118219B2A8CBF2B00583847 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F118219A2A8CBF2B00583847 /* RxSwift */; };
+		F118219E2A8CBF4400583847 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = F118219D2A8CBF4400583847 /* ReactorKit */; };
+		F11821A12A8CBF5B00583847 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = F11821A02A8CBF5B00583847 /* RxDataSources */; };
 		F12F9A7A2A8B9D7200840C45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A792A8B9D7200840C45 /* AppDelegate.swift */; };
 		F12F9A7C2A8B9D7200840C45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A7B2A8B9D7200840C45 /* SceneDelegate.swift */; };
 		F12F9A832A8B9D7400840C45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12F9A822A8B9D7400840C45 /* Assets.xcassets */; };
@@ -88,6 +93,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F11821992A8CBF2B00583847 /* RxRelay in Frameworks */,
+				F11821972A8CBF2B00583847 /* RxCocoa in Frameworks */,
+				F118219B2A8CBF2B00583847 /* RxSwift in Frameworks */,
+				F11821A12A8CBF5B00583847 /* RxDataSources in Frameworks */,
+				F118219E2A8CBF4400583847 /* ReactorKit in Frameworks */,
 				F1B896A42A8C791300AF861F /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +293,11 @@
 			name = "sprinter-ios";
 			packageProductDependencies = (
 				F1B896A32A8C791300AF861F /* SnapKit */,
+				F11821962A8CBF2B00583847 /* RxCocoa */,
+				F11821982A8CBF2B00583847 /* RxRelay */,
+				F118219A2A8CBF2B00583847 /* RxSwift */,
+				F118219D2A8CBF4400583847 /* ReactorKit */,
+				F11821A02A8CBF5B00583847 /* RxDataSources */,
 			);
 			productName = "sprinter-ios";
 			productReference = F12F9A762A8B9D7200840C45 /* sprinter-ios.app */;
@@ -314,6 +329,9 @@
 			mainGroup = F12F9A6D2A8B9D7200840C45;
 			packageReferences = (
 				F1B896A22A8C791300AF861F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F11821952A8CBF2B00583847 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				F118219C2A8CBF4400583847 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+				F118219F2A8CBF5B00583847 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = F12F9A772A8B9D7200840C45 /* Products */;
 			projectDirPath = "";
@@ -590,6 +608,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F11821952A8CBF2B00583847 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		F118219C2A8CBF4400583847 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		F118219F2A8CBF5B00583847 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		F1B896A22A8C791300AF861F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -601,6 +643,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F11821962A8CBF2B00583847 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F11821952A8CBF2B00583847 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		F11821982A8CBF2B00583847 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F11821952A8CBF2B00583847 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		F118219A2A8CBF2B00583847 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F11821952A8CBF2B00583847 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		F118219D2A8CBF4400583847 /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F118219C2A8CBF4400583847 /* XCRemoteSwiftPackageReference "ReactorKit" */;
+			productName = ReactorKit;
+		};
+		F11821A02A8CBF5B00583847 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F118219F2A8CBF5B00583847 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
 		F1B896A32A8C791300AF861F /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F1B896A22A8C791300AF861F /* XCRemoteSwiftPackageReference "SnapKit" */;
