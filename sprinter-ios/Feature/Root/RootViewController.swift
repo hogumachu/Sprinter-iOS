@@ -7,6 +7,9 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
+import ReactorKit
 
 final class RootViewController: BaseViewController<RootReactor> {
     
@@ -17,6 +20,10 @@ final class RootViewController: BaseViewController<RootReactor> {
         homeViewController,
         missionViewController
     ]
+    
+    override func bind(reactor: RootReactor) {
+        bindAction(reactor)
+    }
     
     override func setupLayout() {
         addChild(pageViewController)
@@ -39,9 +46,7 @@ final class RootViewController: BaseViewController<RootReactor> {
     override func setupAttributes() {
         topTabBar.addTopTabBarItem(.init(title: "홈"))
             .addTopTabBarItem(.init(title: "미션"))
-            .setDelegate(self)
         
-        pageViewController.delegate = self
         pageViewController.dataSource = self
         pageViewController.setViewControllers([homeViewController], direction: .forward, animated: true)
     }
@@ -64,8 +69,33 @@ final class RootViewController: BaseViewController<RootReactor> {
     
 }
 
-extension RootViewController: TopTabBarViewDelegate {
-    func topTabBarViewDidSelectAt(_ view: TopTabBarView, at index: Int, item: TopTabBarItem) {
+// MARK: Bind
+
+extension RootViewController {
+    
+    private func bindAction(_ reactor: RootReactor) {
+        topTabBar.rx.itemSelected
+            .bind(to: tabBarSelectedBinder)
+            .disposed(by: disposeBag)
+        
+        pageViewController.rx.didFinishAnimating
+            .bind(to: pageScrollBinder)
+            .disposed(by: disposeBag)
+    }
+    
+    private var tabBarSelectedBinder: Binder<Int> {
+        return Binder(self) { this, index in
+            this.updateSelection(at: index)
+        }
+    }
+    
+    private var pageScrollBinder: Binder<Bool> {
+        return Binder(self) { this, _ in
+            this.updatePageScroll()
+        }
+    }
+    
+    private func updateSelection(at index: Int) {
         guard currentPage != index, pageViewControllers.count > index else { return }
         guard let selectedViewController = pageViewControllers[safe: index] else { return }
         
@@ -74,17 +104,13 @@ extension RootViewController: TopTabBarViewDelegate {
         currentPage = index
     }
     
-}
-
-extension RootViewController: UIPageViewControllerDelegate {
-    
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    private func updatePageScroll() {
         guard let lastVisibleViewController = pageViewController.viewControllers?.first,
               let index = self.pageViewControllers.firstIndex(of: lastVisibleViewController) else {
             return
         }
         currentPage = index
-        topTabBar.updateSelection(index: index)
+        topTabBar.updateSelection(at: index)
     }
     
 }

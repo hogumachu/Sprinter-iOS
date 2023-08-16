@@ -35,6 +35,7 @@ extension UIView {
     }
     
     func addTapGesture() -> UITapGestureRecognizer {
+        self.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer()
         addGestureRecognizer(gesture)
         return gesture

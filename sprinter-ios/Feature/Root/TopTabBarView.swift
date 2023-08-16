@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol TopTabBarViewDelegate: AnyObject {
     
@@ -61,10 +63,22 @@ final class TopTabBarView: UIView {
     
     var currentIndex: Int = 0
     
+    fileprivate let labelTapRelay = PublishRelay<Int>()
+    private var disposeBag = DisposeBag()
     private var labels: [TopTabBarLabel] = []
     private let statusView = UIView(frame: .zero)
     private let scrollView = UIScrollView(frame: .zero)
     private let itemStackView = UIStackView(frame: .zero)
+    private var itemSelectedBinder: Binder<UITapGestureRecognizer> {
+        return Binder(self) { this, gesture in
+            if let gestureView = gesture.view,
+               let label = gestureView as? TopTabBarLabel,
+               let index = this.index(label: label)
+            {
+                this.updateSelection(at: index)
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -76,11 +90,10 @@ final class TopTabBarView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateSelection(index: Int) {
-        labels.enumerated()
-            .forEach { offset, element in
-                element.isSelected = offset == index
-            }
+    func updateSelection(at index: Int) {
+        deselectAll()
+        labels[safe: index]?.isSelected = true
+        labelTapRelay.accept(index)
     }
     
     @discardableResult
@@ -88,7 +101,11 @@ final class TopTabBarView: UIView {
         let isSelected = labels.isEmpty
         let label = TopTabBarLabel(item: item)
             .font(.extraLargeSB)
-            .addTapGesture(target: self, action: #selector(labelDidTap(_:)))
+        
+        label.addTapGesture().rx.event
+            .bind(to: itemSelectedBinder)
+            .disposed(by: disposeBag)
+        
         label.isSelected = isSelected
         labels.append(label)
         itemStackView.addArrangedSubview(label)
@@ -101,21 +118,12 @@ final class TopTabBarView: UIView {
         return self
     }
     
-    @objc private func labelDidTap(_ sender: UITapGestureRecognizer) {
-        guard let senderView = sender.view,
-              let label = senderView as? TopTabBarLabel
-        else {
-            return
-        }
-        
-        labels.enumerated()
-            .forEach { offset, element in
-                if element.item == label.item {
-                    delegate?.topTabBarViewDidSelectAt(self, at: offset, item: element.item)
-                }
-                
-                element.isSelected = element.item == label.item
-            }
+    private func deselectAll() {
+        labels.forEach { $0.isSelected = false }
+    }
+    
+    private func index(label: TopTabBarLabel) -> Int? {
+        return labels.enumerated().first(where: { $0.element.item == label.item })?.offset
     }
     
     private func setupLayout() {
@@ -147,6 +155,15 @@ final class TopTabBarView: UIView {
             .axis(.horizontal)
             .spacing(30)
             .alignment(.leading)
+    }
+    
+}
+
+extension Reactive where Base: TopTabBarView {
+    
+    var itemSelected: ControlEvent<Int> {
+        let source = base.labelTapRelay.asObservable()
+        return ControlEvent(events: source)
     }
     
 }
