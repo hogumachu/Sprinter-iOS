@@ -30,8 +30,7 @@ final class RootViewController: UITabBarController {
         topTabBar.registerSuperView(view)
             .addTopTabBarItem(.init(title: "홈"))
             .addTopTabBarItem(.init(title: "미션"))
-        
-        topTabBar.delegate = self
+            .setDelegate(self)
     }
     
     private func setupTabBarViewControllers() {

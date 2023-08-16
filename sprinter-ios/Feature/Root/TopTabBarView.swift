@@ -88,6 +88,12 @@ final class TopTabBarView: UIView {
         return self
     }
     
+    @discardableResult
+    func setDelegate(_ delegate: TopTabBarViewDelegate?) -> Self {
+        self.delegate = delegate
+        return self
+    }
+    
     @objc private func labelDidTap(_ sender: UITapGestureRecognizer) {
         guard let senderView = sender.view,
               let label = senderView as? TopTabBarLabel
