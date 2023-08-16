@@ -34,11 +34,21 @@ final class MissionCreateViewController: BaseViewController {
         
         navigationView
             .backgroundColor(.black)
+            .configure(.init(type: .close, title: "미션 작성", font: .mediumSB))
+            .setDelegate(self)
         
         addButton
             .setStyle(.normal)
             .setTitle(title: "추가하기", for: .normal)
             .cornerRadius(48 / 2)
+    }
+    
+}
+
+extension MissionCreateViewController: NavigationViewDelegate {
+    
+    func navigationViewDidTapLeftButton(_ view: NavigationView) {
+        navigationController?.dismiss(animated: true)
     }
     
 }
