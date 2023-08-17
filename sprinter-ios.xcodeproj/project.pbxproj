@@ -25,6 +25,12 @@
 		F11821BB2A8CFFD300583847 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821BA2A8CFFD300583847 /* UIViewController+.swift */; };
 		F11821BE2A8D05C800583847 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = F11821BD2A8D05C800583847 /* Swinject */; };
 		F11821C02A8D05DE00583847 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821BF2A8D05DE00583847 /* DependencyInjector.swift */; };
+		F11821C22A8D131200583847 /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821C12A8D131200583847 /* CategoryItemView.swift */; };
+		F11821C72A8DD05A00583847 /* UITextField+Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821C62A8DD05A00583847 /* UITextField+Functional.swift */; };
+		F11821CD2A8DDF7A00583847 /* NotificationCenter+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821CC2A8DDF7A00583847 /* NotificationCenter+Rx.swift */; };
+		F11821CF2A8DDFE300583847 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821CE2A8DDFE300583847 /* Notification+.swift */; };
+		F11821D22A8DE35100583847 /* MissionCreateInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821D12A8DE35100583847 /* MissionCreateInputView.swift */; };
+		F11821D82A8DFB2000583847 /* MissionCreateCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821D72A8DFB2000583847 /* MissionCreateCategoryView.swift */; };
 		F12F9A7A2A8B9D7200840C45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A792A8B9D7200840C45 /* AppDelegate.swift */; };
 		F12F9A7C2A8B9D7200840C45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A7B2A8B9D7200840C45 /* SceneDelegate.swift */; };
 		F12F9A832A8B9D7400840C45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12F9A822A8B9D7400840C45 /* Assets.xcassets */; };
@@ -74,6 +80,12 @@
 		F11821B82A8CFFB000583847 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		F11821BA2A8CFFD300583847 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		F11821BF2A8D05DE00583847 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		F11821C12A8D131200583847 /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
+		F11821C62A8DD05A00583847 /* UITextField+Functional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Functional.swift"; sourceTree = "<group>"; };
+		F11821CC2A8DDF7A00583847 /* NotificationCenter+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Rx.swift"; sourceTree = "<group>"; };
+		F11821CE2A8DDFE300583847 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
+		F11821D12A8DE35100583847 /* MissionCreateInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCreateInputView.swift; sourceTree = "<group>"; };
+		F11821D72A8DFB2000583847 /* MissionCreateCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCreateCategoryView.swift; sourceTree = "<group>"; };
 		F12F9A762A8B9D7200840C45 /* sprinter-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sprinter-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12F9A792A8B9D7200840C45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F12F9A7B2A8B9D7200840C45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +146,7 @@
 			children = (
 				F11821AF2A8CF6A200583847 /* UIPageViewController+Rx.swift */,
 				F11821B12A8CF73C00583847 /* RxPageViewControllerDelegateProxy.swift */,
+				F11821CC2A8DDF7A00583847 /* NotificationCenter+Rx.swift */,
 			);
 			path = ReactiveX;
 			sourceTree = "<group>";
@@ -146,6 +159,15 @@
 				F11821BF2A8D05DE00583847 /* DependencyInjector.swift */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		F11821D02A8DE34800583847 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F11821D72A8DFB2000583847 /* MissionCreateCategoryView.swift */,
+				F11821D12A8DE35100583847 /* MissionCreateInputView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		F12F9A6D2A8B9D7200840C45 = {
@@ -187,6 +209,7 @@
 				F1B896A92A8C889800AF861F /* UIEdgeInsets+.swift */,
 				F11821B82A8CFFB000583847 /* UIApplication+.swift */,
 				F11821BA2A8CFFD300583847 /* UIViewController+.swift */,
+				F11821CE2A8DDFE300583847 /* Notification+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -248,6 +271,7 @@
 				F1B8968E2A8BC2E200AF861F /* UIStackView+Functional.swift */,
 				F1B896932A8BCEDF00AF861F /* UIButton+Functional.swift */,
 				F1B896A72A8C884E00AF861F /* UIScrollView+Functional.swift */,
+				F11821C62A8DD05A00583847 /* UITextField+Functional.swift */,
 			);
 			path = Functional;
 			sourceTree = "<group>";
@@ -311,6 +335,7 @@
 		F1B896AC2A8C8D3C00AF861F /* MissionCreateScene */ = {
 			isa = PBXGroup;
 			children = (
+				F11821D02A8DE34800583847 /* Component */,
 				F1B896AD2A8C8D5A00AF861F /* MissionCreateViewController.swift */,
 				F11821A62A8CC08300583847 /* MissionCreateReactor.swift */,
 			);
@@ -322,6 +347,7 @@
 			children = (
 				F1B896B02A8C8D6B00AF861F /* NavigationView.swift */,
 				F1B896B22A8C8DF700AF861F /* CategoryView.swift */,
+				F11821C12A8D131200583847 /* CategoryItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -413,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1B8967F2A8BB55A00AF861F /* UILabel+Functional.swift in Sources */,
+				F11821CD2A8DDF7A00583847 /* NotificationCenter+Rx.swift in Sources */,
 				F12F9A902A8BA1BB00840C45 /* UIColor+DesignSystem.swift in Sources */,
 				F1B896822A8BB6B800AF861F /* UITableView+Functional.swift in Sources */,
 				F11821C02A8D05DE00583847 /* DependencyInjector.swift in Sources */,
@@ -421,12 +448,15 @@
 				F1B8969B2A8C6ED900AF861F /* TopTabBarView.swift in Sources */,
 				F1B896922A8BCD0000AF861F /* ActionButton.swift in Sources */,
 				F1B896852A8BB71B00AF861F /* UITableView+Cell.swift in Sources */,
+				F11821C22A8D131200583847 /* CategoryItemView.swift in Sources */,
 				F1B896872A8BBA4A00AF861F /* UITableViewCell+Functional.swift in Sources */,
 				F11821A52A8CC07000583847 /* MissionReactor.swift in Sources */,
 				F1B8968A2A8BC02F00AF861F /* ArrowTableViewCell.swift in Sources */,
+				F11821D22A8DE35100583847 /* MissionCreateInputView.swift in Sources */,
 				F11821B72A8CFE7800583847 /* SceneFactory.swift in Sources */,
 				F1B8967C2A8BB3F700AF861F /* UIView+Functional.swift in Sources */,
 				F1B896A82A8C884E00AF861F /* UIScrollView+Functional.swift in Sources */,
+				F11821D82A8DFB2000583847 /* MissionCreateCategoryView.swift in Sources */,
 				F11821BB2A8CFFD300583847 /* UIViewController+.swift in Sources */,
 				F1B896942A8BCEDF00AF861F /* UIButton+Functional.swift in Sources */,
 				F11821B02A8CF6A200583847 /* UIPageViewController+Rx.swift in Sources */,
@@ -436,6 +466,7 @@
 				F1B896A12A8C783400AF861F /* UIView+.swift in Sources */,
 				F1B8968F2A8BC2E200AF861F /* UIStackView+Functional.swift in Sources */,
 				F11821A32A8CC01300583847 /* HomeReactor.swift in Sources */,
+				F11821CF2A8DDFE300583847 /* Notification+.swift in Sources */,
 				F12F9A7C2A8B9D7200840C45 /* SceneDelegate.swift in Sources */,
 				F1B8968C2A8BC1A200AF861F /* String+Optional.swift in Sources */,
 				F11821B92A8CFFB000583847 /* UIApplication+.swift in Sources */,
@@ -455,6 +486,7 @@
 				F1B896B52A8C963600AF861F /* BaseView.swift in Sources */,
 				F1B8966F2A8BAE7200AF861F /* HomeViewController.swift in Sources */,
 				F1B896972A8C6B8E00AF861F /* MissionViewController.swift in Sources */,
+				F11821C72A8DD05A00583847 /* UITextField+Functional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
