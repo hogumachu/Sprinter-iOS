@@ -21,7 +21,7 @@ final class MissionCreateCategoryView: BaseView {
         categoryLabel.registerSuperView(self)
             .snp.makeConstraints { make in
                 make.top.equalToSuperview()
-                make.leading.trailing.equalToSuperview()
+                make.leading.trailing.equalToSuperview().inset(20)
             }
         
         categoryView.registerSuperView(self)
