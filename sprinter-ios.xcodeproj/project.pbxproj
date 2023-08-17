@@ -31,6 +31,7 @@
 		F11821CF2A8DDFE300583847 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821CE2A8DDFE300583847 /* Notification+.swift */; };
 		F11821D22A8DE35100583847 /* MissionCreateInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821D12A8DE35100583847 /* MissionCreateInputView.swift */; };
 		F11821D82A8DFB2000583847 /* MissionCreateCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821D72A8DFB2000583847 /* MissionCreateCategoryView.swift */; };
+		F11821DA2A8E089000583847 /* MissionCreateDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11821D92A8E089000583847 /* MissionCreateDateView.swift */; };
 		F12F9A7A2A8B9D7200840C45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A792A8B9D7200840C45 /* AppDelegate.swift */; };
 		F12F9A7C2A8B9D7200840C45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A7B2A8B9D7200840C45 /* SceneDelegate.swift */; };
 		F12F9A832A8B9D7400840C45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12F9A822A8B9D7400840C45 /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		F11821CE2A8DDFE300583847 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		F11821D12A8DE35100583847 /* MissionCreateInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCreateInputView.swift; sourceTree = "<group>"; };
 		F11821D72A8DFB2000583847 /* MissionCreateCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCreateCategoryView.swift; sourceTree = "<group>"; };
+		F11821D92A8E089000583847 /* MissionCreateDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCreateDateView.swift; sourceTree = "<group>"; };
 		F12F9A762A8B9D7200840C45 /* sprinter-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sprinter-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12F9A792A8B9D7200840C45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F12F9A7B2A8B9D7200840C45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		F11821D02A8DE34800583847 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				F11821D92A8E089000583847 /* MissionCreateDateView.swift */,
 				F11821D72A8DFB2000583847 /* MissionCreateCategoryView.swift */,
 				F11821D12A8DE35100583847 /* MissionCreateInputView.swift */,
 			);
@@ -443,6 +446,7 @@
 				F12F9A902A8BA1BB00840C45 /* UIColor+DesignSystem.swift in Sources */,
 				F1B896822A8BB6B800AF861F /* UITableView+Functional.swift in Sources */,
 				F11821C02A8D05DE00583847 /* DependencyInjector.swift in Sources */,
+				F11821DA2A8E089000583847 /* MissionCreateDateView.swift in Sources */,
 				F12F9A7A2A8B9D7200840C45 /* AppDelegate.swift in Sources */,
 				F1B896752A8BB26200AF861F /* MissionTableViewCell.swift in Sources */,
 				F1B8969B2A8C6ED900AF861F /* TopTabBarView.swift in Sources */,

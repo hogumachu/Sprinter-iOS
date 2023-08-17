@@ -18,6 +18,7 @@ final class MissionCreateViewController: BaseViewController<MissionCreateReactor
     private let navigationView = NavigationView(frame: .zero)
     private let scrollView = UIScrollView(frame: .zero)
     private let stackView = UIStackView(frame: .zero)
+    private let dateView = MissionCreateDateView(frame: .zero)
     private let categoryView = MissionCreateCategoryView(frame: .zero)
     private let missionInputView = MissionCreateInputView(frame: .zero)
     private let addButton = ActionButton(frame: .zero)
@@ -56,6 +57,7 @@ final class MissionCreateViewController: BaseViewController<MissionCreateReactor
                 make.width.equalToSuperview()
             }
         
+        stackView.addArrangedSubview(dateView)
         stackView.addArrangedSubview(categoryView)
         stackView.addArrangedSubview(missionInputView)
     }
