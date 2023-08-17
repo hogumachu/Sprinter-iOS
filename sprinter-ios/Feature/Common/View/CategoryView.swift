@@ -7,145 +7,108 @@
 
 import UIKit
 import SnapKit
-
-protocol CategoryViewDelegate: AnyObject {
-    
-    func categoryViewDidSelectAt(_ view: CategoryView, at index: Int, item: CategoryItem)
-    
-}
-
-struct CategoryItem: Equatable {
-    
-    let title: String
-    
-}
-
-final class CategoryItemView: BaseView {
-    
-    var item: CategoryItem!
-    
-    var isSelected: Bool = false {
-        didSet { updateSelection() }
-    }
-    
-    private let containerView = UIView(frame: .zero)
-    private let categoryLabel = UILabel(frame: .zero)
-    
-    @discardableResult
-    func configure(_ item: CategoryItem) -> Self {
-        self.item = item
-        categoryLabel.text(item.title)
-        return self
-    }
-    
-    private func updateSelection() {
-        if isSelected {
-            categoryLabel.font(.smallB)
-                .textColor(.black)
-            
-            containerView.backgroundColor(.white)
-                .borderColor(.white)
-        } else {
-            categoryLabel.font(.smallR)
-                .textColor(.sGray1)
-            
-            containerView.backgroundColor(.black)
-                .borderColor(.sGray1)
-        }
-    }
-    
-    override func setupLayout() {
-        containerView.registerSuperView(self)
-            .snp.makeConstraints { make in
-                make.edges.equalToSuperview()
-                make.height.equalTo(30)
-            }
-        
-        categoryLabel.registerSuperView(containerView)
-            .snp.makeConstraints { make in
-                make.leading.trailing.equalToSuperview().inset(10)
-                make.centerY.equalToSuperview()
-            }
-    }
-    
-    override func setupAttributes() {
-        containerView
-            .backgroundColor(.black)
-            .borderColor(.sGray1)
-            .borderWidth(1)
-            .cornerRadius(30 / 2)
-        
-        categoryLabel
-            .textColor(.sGray1)
-            .font(.smallR)
-    }
-    
-}
+import RxSwift
+import RxCocoa
+import RxRelay
 
 final class CategoryView: BaseView {
     
-    weak var delegate: CategoryViewDelegate?
+    var itemCornerRadius: CGFloat = 0 {
+        didSet { updateRadius() }
+    }
     
     private var itemViews: [CategoryItemView] = []
     private let scrollView = UIScrollView(frame: .zero)
     private let categoryStackView = UIStackView(frame: .zero)
+    fileprivate let itemTapEventRelay = PublishRelay<Int>()
+    private var itemTapBinder: Binder<UITapGestureRecognizer> {
+        return Binder(self) { this, gesture in
+            guard let index = this.index(gesture: gesture) else { return }
+            this.deselectAll()
+            this.updateSelection(at: index)
+            this.itemTapEventRelay.accept(index)
+        }
+    }
+    private let disposeBag = DisposeBag()
     
-    func configure(_ items: [CategoryItem]) {
+    @discardableResult
+    func configure(_ items: [CategoryItem]) -> Self {
         itemViews.removeAll(keepingCapacity: true)
         categoryStackView
             .arrangedSubviews
             .forEach { $0.removeFromSuperview() }
         
-        items.enumerated()
+        items
+            .enumerated()
             .forEach { offset, item in
                 let isSelected = offset == 0
-                let itemView = CategoryItemView(frame: .zero)
-                    .configure(item)
-                    .addTapGesture(target: self, action: #selector(itemViewDidTap(_:)))
+                let itemView = CategoryItemView(item: item)
+                    .cornerRadius(itemCornerRadius)
                 itemView.isSelected = isSelected
                 itemViews.append(itemView)
                 categoryStackView.addArrangedSubview(itemView)
+                itemView.rx.tap
+                    .bind(to: itemTapBinder)
+                    .disposed(by: disposeBag)
             }
+        return self
     }
     
-    @objc private func itemViewDidTap(_ sender: UITapGestureRecognizer) {
-        guard let senderView = sender.view,
-              let itemView = senderView as? CategoryItemView
-        else {
-            return
-        }
-        
-        itemViews.enumerated().forEach { offset, element in
-            let isSelected = itemView.item == element.item
-            element.isSelected = isSelected
-            
-            if isSelected {
-                delegate?.categoryViewDidSelectAt(self, at: offset, item: itemView.item)
-            }
-        }
+    private func updateRadius() {
+        itemViews.forEach { $0.cornerRadius(itemCornerRadius) }
+    }
+    
+    private func deselectAll() {
+        itemViews.forEach { $0.isSelected = false }
+    }
+    
+    private func updateSelection(at index: Int) {
+        guard let view = itemViews[safe: index] else { return }
+        view.isSelected = true
+    }
+    
+    private func index(gesture: UITapGestureRecognizer) -> Int? {
+        guard let view = gesture.view, let itemView = view as? CategoryItemView else { return nil }
+        return itemViews.enumerated().first(where: { $0.element == itemView })?.offset
     }
     
     override func setupLayout() {
-        scrollView.registerSuperView(self)
+        scrollView
+            .registerSuperView(self)
             .snp.makeConstraints { make in
                 make.edges.equalToSuperview()
             }
         
-        categoryStackView.registerSuperView(scrollView)
+        categoryStackView
+            .registerSuperView(scrollView)
             .snp.makeConstraints { make in
                 make.edges.equalToSuperview()
+                make.height.equalTo(scrollView)
             }
     }
     
     override func setupAttributes() {
-        scrollView.backgroundColor(.black)
+        scrollView
+            .backgroundColor(.black)
             .contentInset(.left(20))
         
-        categoryStackView.backgroundColor(.black)
+        scrollView.showsHorizontalScrollIndicator = false
+        
+        categoryStackView
+            .backgroundColor(.black)
             .axis(.horizontal)
             .spacing(10)
             .alignment(.leading)
+            .distribution(.equalSpacing)
     }
     
+}
+
+extension Reactive where Base: CategoryView {
+    
+    var itemSelected: ControlEvent<Int> {
+        let source = base.itemTapEventRelay.asObservable()
+        return ControlEvent(events: source)
+    }
     
 }

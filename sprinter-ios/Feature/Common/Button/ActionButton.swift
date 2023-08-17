@@ -13,11 +13,14 @@ enum ActionButtonStyle {
     case secondary
     case line
     
+    case smallLine
+    
     var textColor: UIColor {
         switch self {
         case .normal: return .black
         case .secondary: return .white
         case .line: return .mint1
+        case .smallLine: return .mint1
         }
     }
     
@@ -26,6 +29,7 @@ enum ActionButtonStyle {
         case .normal: return .mint1
         case .secondary: return .sGray3
         case .line: return .black
+        case .smallLine: return .black
         }
     }
     
@@ -34,6 +38,7 @@ enum ActionButtonStyle {
         case .normal: return .white.withAlphaComponent(0.05)
         case .secondary: return .white.withAlphaComponent(0.05)
         case .line: return .mint1
+        case .smallLine: return .mint1
         }
     }
     
@@ -47,6 +52,7 @@ enum ActionButtonStyle {
     var font: UIFont {
         switch self {
         case .line: return .mediumB
+        case .smallLine: return .smallB
         default: return .mediumSB
         }
     }
@@ -66,7 +72,10 @@ enum ActionButtonStyle {
     }
     
     var disabledFont: UIFont {
-        return .mediumSB
+        switch self {
+        case .smallLine: return .smallSB
+        default: return .mediumSB
+        }
     }
     
     var disabledBorderWidth: CGFloat {
