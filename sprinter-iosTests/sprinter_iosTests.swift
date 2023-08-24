@@ -14,4 +14,9 @@ final class sprinter_iosTests: XCTestCase {
         XCTAssertTrue(isTrue, "반드시 참이다")
     }
     
+    func testSample2() {
+        let isFalse = false
+        XCTAssertFalse(isFalse, "반드시 거짓이다")
+    }
+    
 }
