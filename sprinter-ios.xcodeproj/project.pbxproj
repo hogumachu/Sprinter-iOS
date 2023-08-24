@@ -110,6 +110,7 @@
 		F12F9A932A8BA3EA00840C45 /* UIFont+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+DesignSystem.swift"; sourceTree = "<group>"; };
 		F15C97AE2A973AD00048561A /* sprinter-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sprinter-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F15C97B02A973AD00048561A /* sprinter_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sprinter_iosTests.swift; sourceTree = "<group>"; };
+		F15C97B72A974F900048561A /* sprinter-ios.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sprinter-ios.xctestplan"; sourceTree = "<group>"; };
 		F1B8966E2A8BAE7200AF861F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F1B896712A8BB1EF00AF861F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F1B896742A8BB26200AF861F /* MissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionTableViewCell.swift; sourceTree = "<group>"; };
@@ -196,6 +197,7 @@
 		F12F9A6D2A8B9D7200840C45 = {
 			isa = PBXGroup;
 			children = (
+				F15C97B72A974F900048561A /* sprinter-ios.xctestplan */,
 				F12F9A782A8B9D7200840C45 /* sprinter-ios */,
 				F15C97AF2A973AD00048561A /* sprinter-iosTests */,
 				F12F9A772A8B9D7200840C45 /* Products */,

@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "8A674528-02CE-46CC-96F1-41DB890B2C04",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:sprinter-ios.xcodeproj",
+      "identifier" : "F12F9A752A8B9D7200840C45",
+      "name" : "sprinter-ios"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:sprinter-ios.xcodeproj",
+        "identifier" : "F15C97AD2A973AD00048561A",
+        "name" : "sprinter-iosTests"
+      }
+    }
+  ],
+  "version" : 1
+}
