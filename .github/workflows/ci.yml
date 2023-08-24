@@ -15,7 +15,7 @@ jobs:
         # xcodebuild test -project sprinter-ios.xcodeproj -scheme sprinter-ios -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' build test
         xcodebuild build \
         -scheme "sprinter-ios"
-        -clonedSourcePackageDirPath SourcePackages \
+        -clonedSourcePackagesDirPath SourcePackages \
         -destination "platform=iOS Simulator,name=iPhone 14"
       
     - name: Upload coverage reports to Codecov
