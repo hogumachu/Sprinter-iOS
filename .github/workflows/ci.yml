@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build and Test
-      run: xcodebuild test -project sprinter-ios.xcodeproj -scheme sprinter-ios -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' build test
+      run: xcodebuild test -project sprinter-ios.xcodeproj -scheme sprinter-ios -clonedSourcePackagesDirPath SourcePackages -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' build test
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
       env:
