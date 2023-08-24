@@ -39,6 +39,7 @@
 		F12F9A902A8BA1BB00840C45 /* UIColor+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A8F2A8BA1BB00840C45 /* UIColor+DesignSystem.swift */; };
 		F12F9A922A8BA22400840C45 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A912A8BA22400840C45 /* UIColor+Hex.swift */; };
 		F12F9A942A8BA3EA00840C45 /* UIFont+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12F9A932A8BA3EA00840C45 /* UIFont+DesignSystem.swift */; };
+		F15C97B12A973AD00048561A /* sprinter_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15C97B02A973AD00048561A /* sprinter_iosTests.swift */; };
 		F1B8966F2A8BAE7200AF861F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B8966E2A8BAE7200AF861F /* HomeViewController.swift */; };
 		F1B896722A8BB1EF00AF861F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B896712A8BB1EF00AF861F /* BaseViewController.swift */; };
 		F1B896752A8BB26200AF861F /* MissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B896742A8BB26200AF861F /* MissionTableViewCell.swift */; };
@@ -67,6 +68,16 @@
 		F1B896B52A8C963600AF861F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B896B42A8C963600AF861F /* BaseView.swift */; };
 		F1B896B72A8C9F4F00AF861F /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B896B62A8C9F4F00AF861F /* Array+Safe.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F15C97B22A973AD00048561A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F12F9A6E2A8B9D7200840C45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F12F9A752A8B9D7200840C45;
+			remoteInfo = "sprinter-ios";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F118218E2A8CA99B00583847 /* NavigationViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewButton.swift; sourceTree = "<group>"; };
@@ -97,6 +108,8 @@
 		F12F9A8F2A8BA1BB00840C45 /* UIColor+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+DesignSystem.swift"; sourceTree = "<group>"; };
 		F12F9A912A8BA22400840C45 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		F12F9A932A8BA3EA00840C45 /* UIFont+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+DesignSystem.swift"; sourceTree = "<group>"; };
+		F15C97AE2A973AD00048561A /* sprinter-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sprinter-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F15C97B02A973AD00048561A /* sprinter_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sprinter_iosTests.swift; sourceTree = "<group>"; };
 		F1B8966E2A8BAE7200AF861F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F1B896712A8BB1EF00AF861F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F1B896742A8BB26200AF861F /* MissionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionTableViewCell.swift; sourceTree = "<group>"; };
@@ -140,6 +153,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F15C97AB2A973AD00048561A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -177,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				F12F9A782A8B9D7200840C45 /* sprinter-ios */,
+				F15C97AF2A973AD00048561A /* sprinter-iosTests */,
 				F12F9A772A8B9D7200840C45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -185,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				F12F9A762A8B9D7200840C45 /* sprinter-ios.app */,
+				F15C97AE2A973AD00048561A /* sprinter-iosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,6 +261,14 @@
 				F12F9A872A8B9D7400840C45 /* Info.plist */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		F15C97AF2A973AD00048561A /* sprinter-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				F15C97B02A973AD00048561A /* sprinter_iosTests.swift */,
+			);
+			path = "sprinter-iosTests";
 			sourceTree = "<group>";
 		};
 		F1B8966D2A8BAE6B00AF861F /* HomeScene */ = {
@@ -384,6 +414,24 @@
 			productReference = F12F9A762A8B9D7200840C45 /* sprinter-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F15C97AD2A973AD00048561A /* sprinter-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F15C97B62A973AD00048561A /* Build configuration list for PBXNativeTarget "sprinter-iosTests" */;
+			buildPhases = (
+				F15C97AA2A973AD00048561A /* Sources */,
+				F15C97AB2A973AD00048561A /* Frameworks */,
+				F15C97AC2A973AD00048561A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F15C97B32A973AD00048561A /* PBXTargetDependency */,
+			);
+			name = "sprinter-iosTests";
+			productName = "sprinter-iosTests";
+			productReference = F15C97AE2A973AD00048561A /* sprinter-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -396,6 +444,10 @@
 				TargetAttributes = {
 					F12F9A752A8B9D7200840C45 = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					F15C97AD2A973AD00048561A = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = F12F9A752A8B9D7200840C45;
 					};
 				};
 			};
@@ -420,6 +472,7 @@
 			projectRoot = "";
 			targets = (
 				F12F9A752A8B9D7200840C45 /* sprinter-ios */,
+				F15C97AD2A973AD00048561A /* sprinter-iosTests */,
 			);
 		};
 /* End PBXProject section */
@@ -431,6 +484,13 @@
 			files = (
 				F12F9A862A8B9D7400840C45 /* LaunchScreen.storyboard in Resources */,
 				F12F9A832A8B9D7400840C45 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F15C97AC2A973AD00048561A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +554,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F15C97AA2A973AD00048561A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15C97B12A973AD00048561A /* sprinter_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F15C97B32A973AD00048561A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F12F9A752A8B9D7200840C45 /* sprinter-ios */;
+			targetProxy = F15C97B22A973AD00048561A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F12F9A842A8B9D7400840C45 /* LaunchScreen.storyboard */ = {
@@ -684,6 +760,44 @@
 			};
 			name = Release;
 		};
+		F15C97B42A973AD00048561A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 62ZLDXLZ77;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hogumachu.sprinter-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sprinter-ios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/sprinter-ios";
+			};
+			name = Debug;
+		};
+		F15C97B52A973AD00048561A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 62ZLDXLZ77;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "hogumachu.sprinter-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sprinter-ios.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/sprinter-ios";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -701,6 +815,15 @@
 			buildConfigurations = (
 				F12F9A8B2A8B9D7400840C45 /* Debug */,
 				F12F9A8C2A8B9D7400840C45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F15C97B62A973AD00048561A /* Build configuration list for PBXNativeTarget "sprinter-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F15C97B42A973AD00048561A /* Debug */,
+				F15C97B52A973AD00048561A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
