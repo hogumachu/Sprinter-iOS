@@ -1,15 +1,13 @@
-name: Test
+name: CI
 
 on:
-  push:
-    branches: [ develop ]
   pull_request:
-    branches: [ develop ]
+    types: [labeled]
 
 jobs:
   test:
     runs-on: macos-latest
-
+    if: ${{ github.event.action != 'labeled' || github.event.label.name == 'CI' }}
     steps:
     - uses: actions/checkout@v3
     - name: Build and Test
