@@ -16,7 +16,8 @@ jobs:
         -project sprinter-ios.xcodeproj \
         -scheme sprinter-ios \
         -clonedSourcePackagesDirPath SourcePackages \
-        -destination 'platform=iOS Simulator,name=iPhone 14,OS=lates'
+        -destination 'platform=iOS Simulator,name=iPhone 14,OS=lates' \
+        build test
       
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
