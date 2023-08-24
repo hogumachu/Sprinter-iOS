@@ -8,17 +8,22 @@ jobs:
   test:
     runs-on: macos-latest
     if: ${{ github.event.label.name == 'CI' }}
+    env:
+      PROJECT: sprinter-ios.xcodeproj
+      SCHEME: sprinter-ios
+      DESTINATION: platform=iOS Simulator,name=iPhone 14,OS=latest
+      PATH: ./sprinter-ios.xcresult
     steps:
     - uses: actions/checkout@v3
     - name: Build and Test
       run: |
         xcodebuild test \
-        -project sprinter-ios.xcodeproj \
-        -scheme sprinter-ios \
+        -project "$PROJECT" \
+        -scheme "$SCHEME" \
         -clonedSourcePackagesDirPath SourcePackages \
-        -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' \
+        -destination "$DESTINATION" \
         -enableCodeCoverage YES \
-        -resultBundlePath "./sprinter-ios.xcresult";
+        -resultBundlePath "$PATH";
         
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
@@ -26,4 +31,4 @@ jobs:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       with:
         xcode: true
-        xcode_archive_path: "./sprinter-ios.xcresult"
+        xcode_archive_path: "$PATH"
